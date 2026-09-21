@@ -1,0 +1,80 @@
+name: autovella_mobile
+description: "Autovella — One System. Every Workflow. Always Ahead. Mobile client for the Autovella CRM + PM + PSA platform."
+publish_to: 'none'
+version: 1.2.0+5
+
+environment:
+  sdk: ^3.13.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.6.1
+
+  # Routing
+  go_router: ^14.6.2
+
+  # Networking (bearer-token auth against autovella.cloud/api)
+  dio: ^5.7.0
+
+  # Persistence
+  flutter_secure_storage: ^9.2.2
+  shared_preferences: ^2.3.3
+
+  # Formatting (INR currency, Asia/Kolkata dates)
+  intl: ^0.19.0
+
+  # Rich-text task/project descriptions arrive as HTML from the API
+  flutter_widget_from_html_core: ^0.15.2
+
+
+  # Expenses (receipt capture) + avatars
+  image_picker: ^1.1.2
+  cached_network_image: ^3.4.1
+
+  # Attendance check-in
+  geolocator: ^13.0.2
+
+  # Notifications: OS permission + local delivery. True push needs FCM/APNs
+  # and a backend device-token endpoint, which the platform does not expose
+  # yet; this covers permission and in-app/polled delivery.
+  flutter_local_notifications: ^18.0.1
+  permission_handler: ^11.3.1
+
+  # Biometric / device-credential app lock
+  local_auth: ^2.3.0
+
+  # Drives the offline banner and replays queued writes when the network
+  # comes back
+  connectivity_plus: ^6.1.0
+
+  # Opening attachments and external links
+  url_launcher: ^6.3.1
+
+  # System share sheet for records
+  share_plus: ^10.1.2
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.2
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+
+# App icon, generated from the brand mark.
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo_on_light.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/images/logo_on_light.png"
+  remove_alpha_ios: true
+  background_color_ios: "#FFFFFF"
